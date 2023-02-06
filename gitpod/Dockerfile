@@ -45,6 +45,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     python3-pip \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip3 install conan
 # Doxygen    
 # COPY install_doxygen.sh /tmp
 # RUN bash /tmp/install_doxygen.sh
