@@ -35,6 +35,16 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         gdb \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/*
 
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get -y install --no-install-recommends \
+    clang-format-12 \
+    git \
+    gdb \
+    cmake \
+    build-essential \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
 # Doxygen    
 # COPY install_doxygen.sh /tmp
 # RUN bash /tmp/install_doxygen.sh
